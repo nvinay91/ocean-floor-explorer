@@ -13,9 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OceanFloorExplorerApplication {
 
 	public static void main(String[] args) {
-		System.out.println("=== Application Starting ===");
-		printNotes();
-		printGrid(5);
+//		System.out.println("=== Application Starting ===");
+//		printNotes();
+//		printGrid(5);
 		SpringApplication.run(OceanFloorExplorerApplication.class, args);
 	}
 

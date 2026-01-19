@@ -15,3 +15,156 @@
 ## Step 3: Implementation
 - Create a controller to take the request object and pass it to Service to Integrate Direction - Position - Validation methods.
 - Return the response object having the finalPosition , isObstacleFound , visited nodes
+
+
+## API Details:
+
+http://localhost:8082/api/probe/execute
+
+Success Scenario:
+##------------
+Request:
+##------------
+{
+    "grid":{
+        "width":5,
+        "height":5,
+        "obstacles":[{ "x": 2, "y": 2 },{ "x": 4, "y": 3 }]
+    },
+    "start":{
+        "x":0,
+        "y":0
+    },
+    "command":"RFFFFFLFFFFF"
+}
+##------------
+Response:
+##------------
+{
+    "finalPosition": {
+        "x": 5,
+        "y": 5
+    },
+    "visited": [
+        {
+            "x": 1,
+            "y": 0
+        },
+        {
+            "x": 2,
+            "y": 0
+        },
+        {
+            "x": 3,
+            "y": 0
+        },
+        {
+            "x": 4,
+            "y": 0
+        },
+        {
+            "x": 5,
+            "y": 0
+        },
+        {
+            "x": 5,
+            "y": 1
+        },
+        {
+            "x": 5,
+            "y": 2
+        },
+        {
+            "x": 5,
+            "y": 3
+        },
+        {
+            "x": 5,
+            "y": 4
+        },
+        {
+            "x": 5,
+            "y": 5
+        },
+        {
+            "x": 0,
+            "y": 1
+        },
+        {
+            "x": 1,
+            "y": 1
+        },
+        {
+            "x": 2,
+            "y": 1
+        },
+        {
+            "x": 1,
+            "y": 0
+        },
+        {
+            "x": 2,
+            "y": 0
+        },
+        {
+            "x": 3,
+            "y": 0
+        },
+        {
+            "x": 4,
+            "y": 0
+        },
+        {
+            "x": 5,
+            "y": 0
+        },
+        {
+            "x": 5,
+            "y": 1
+        },
+        {
+            "x": 5,
+            "y": 2
+        },
+        {
+            "x": 5,
+            "y": 3
+        },
+        {
+            "x": 5,
+            "y": 4
+        },
+        {
+            "x": 5,
+            "y": 5
+        }
+    ],
+    "obstacleHit": false
+}
+
+
+Obstacle Scenario: 
+##------------
+Request:
+##------------
+{
+    "grid":{
+        "width":5,
+        "height":5,
+        "obstacles":[{ "x": 2, "y": 2 },{ "x": 4, "y": 3 }]
+    },
+    "start":{
+        "x":0,
+        "y":0
+    },
+    "command":"FRFFLF"
+}
+
+##------------
+Response:
+##------------
+{
+    "errorId": "Err-1",
+    "errorDesc": "Grid Validation Failed - Either Obstacle / Out of Grid Exception",
+    "severity": "4"
+}

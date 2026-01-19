@@ -1,0 +1,17 @@
+# Project Execution Steps
+
+## Step 1: Requirement Analysis
+- For moving on the sea bed, we need to have the fixed grid in which the probe should move
+- In the request, we will take 
+	- Grid Data ( Grid Coordinates in which the probe should move and Obstacles present in which coordinates)
+	- Position of the probe from where it needs to start
+	- Command to the probe to execute (L - Left turn, R- Right turn, F - Move Front, B - Move Back)
+
+## Step 2: Design
+- Design Direction test class to check the probe's direction (It can either turn Right or turn Left)
+- Design Movement test class to check the probe's movement (It can either move Front or Back)
+- Design Validation class to check the probe's reached any obstacle or it is going beyond the grid.
+
+## Step 3: Implementation
+- Create a controller to take the request object and pass it to Service to Integrate Direction - Position - Validation methods.
+- Return the response object having the finalPosition , isObstacleFound , visited nodes
